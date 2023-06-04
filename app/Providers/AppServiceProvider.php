@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Item\ItemRepository;
+use App\Repositories\Item\ItemRepositoryImplement;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\User\UserRepository;
 use App\Repositories\User\UserRepositoryImplement;
@@ -18,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             UserRepository::class,
             UserRepositoryImplement::class
+        );
+        $this->app->bind(
+            ItemRepository::class,
+            ItemRepositoryImplement::class,
         );
     }
 
